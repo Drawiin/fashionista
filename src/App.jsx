@@ -3,7 +3,7 @@ import Header from './components/Header'
 
 function App() {
   return (
-    <Header title="Fashionista" />
+    <Header title="Fashionista" counter={0}/>
   )
 }
 

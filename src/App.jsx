@@ -6,7 +6,7 @@ import ProductList from './components/ProductList'
 function App() {
   return (
     <div>
-      <Header title="Fashionista" counter={0}/>
+      <Header title="Fashionista" counter={10}/>
       <ProductList />
     </div>
   )

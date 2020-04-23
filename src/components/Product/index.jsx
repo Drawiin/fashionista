@@ -2,24 +2,49 @@ import React from 'react'
 
 import './styles.css'
 
-import placeHolder from '../../assets/images/placeholder.jpg'
 
-export default function Product(){
+
+export default function Product({ 
+        name, 
+        on_sale: onSale,
+        discount_percentage: discountPercentage,
+        regular_price: regularPrice,
+        actual_price: actualPrice
+    }){
+    const image = 'https://d3l7rqep7l31az.cloudfront.net/images/products/20002605_615_catalog_1.jpg?1460136912'
+
+    function showDiscountPercentage(){
+        if (onSale) {
+            return (
+                <span className="product__sale">
+                    <span>{discountPercentage}</span>
+                </span>
+            )
+        }
+        return null
+    }
+
+    function showOldPrice(){
+        if(onSale){
+            return (
+                <span className="product__oldPrice">{regularPrice}</span>
+            )
+        }
+        return null
+    }
 
     return(
         <li className="product">
-            <span className="product__sale">
-                <span>20%</span>
-            </span>
+            {showDiscountPercentage()}
             <figure className="product__img">
-                <img src={placeHolder} alt="clothes"/>
+                <img src={image} alt="clothes"/>
             </figure>
             <div className="product__description">
-                <p className="product__name">Camisa Polo</p>
+                <p className="product__name">{name}</p>
                 
                 <p className="product__price">
-                    <span className="product__oldPrice">R$100,00</span>
-                    <span className="product__newPrice">R$80,00</span>
+                    {showOldPrice()}
+                    <span className="product__newPrice">{actualPrice}</span>
                 </p>
             </div>
         </li>

@@ -9,7 +9,9 @@ import Button from '../Button'
 export default function header({title, counter}){
     return(
         <header className="header" >
-            <h1 className="header__title">{title}</h1>
+            <a className="header__title" href="/">
+                <h1 >{title}</h1>
+            </a>
             <div>
                 <Button>
                     <FiSearch size={28}/>

@@ -1,0 +1,12 @@
+.products {
+    padding: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+@media screen and (min-width: 700px){
+    .products{
+        grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    }
+}

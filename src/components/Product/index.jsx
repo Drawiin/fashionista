@@ -24,10 +24,10 @@ export default function Product({
         return null
     }
 
-    function showOldPrice(){
+    function showRegularPrice(){
         if(onSale){
             return (
-                <span className="product__oldPrice">{regularPrice}</span>
+                <span className="product__regularPrice">{regularPrice}</span>
             )
         }
         return null
@@ -43,8 +43,8 @@ export default function Product({
                 <p className="product__name">{name}</p>
                 
                 <p className="product__price">
-                    {showOldPrice()}
-                    <span className="product__newPrice">{actualPrice}</span>
+                    {showRegularPrice()}
+                    <span className="product__actualPrice">{actualPrice}</span>
                 </p>
             </div>
         </li>

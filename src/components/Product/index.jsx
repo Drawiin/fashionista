@@ -11,7 +11,7 @@ export default function Product({
         regular_price: regularPrice,
         actual_price: actualPrice
     }){
-    const image = 'https://d3l7rqep7l31az.cloudfront.net/images/products/20002605_615_catalog_1.jpg?1460136912'
+    const image = 'https://via.placeholder.com/470x594/FFFFFF/?text=Imagem+Indispon%C3%ADvel'
 
     function showDiscountPercentage(){
         if (onSale) {

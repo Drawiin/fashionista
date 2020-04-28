@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 import Routes from './Routes'
-
-
+import Header from './components/Header'
 
 function App() {
   return (
-    <Routes/>
+    <Fragment>
+      <Header title="Fashionista" counter={99}/>
+      <Routes/>
+    </Fragment>
   )
 }
 

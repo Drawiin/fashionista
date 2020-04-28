@@ -4,7 +4,6 @@ import api from '../../services/api'
 
 import './styles.css'
 
-import Header from '../../components/Header'
 import Catalog from '../../components/Catalog'
 
 export default function Home(){
@@ -23,8 +22,10 @@ export default function Home(){
     useEffect(() => {loadProducts()}, [products])
     
     return (
-        <div>
-            <Header title="Fashionista" counter={10} />
+        <div className="home">
+            <div className="home__info">
+                <span>Total: {products.length}</span>
+            </div>
             <Catalog products={products}/>
         </div>
     )

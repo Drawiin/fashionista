@@ -6,7 +6,7 @@ import Product from '../Product'
 
 export default function Catalog({ products }){
     return (
-        <ul className="products">
+        <ul className="catalog">
             {products.map( ({ sizes: [{sku}], ...rest}) => (<Product key={sku} {...rest} />))}
         </ul>
     )

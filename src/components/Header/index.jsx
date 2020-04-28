@@ -8,7 +8,7 @@ import Button from '../Button'
 
 export default function header({title, counter}){
     return(
-        <header className="header" >
+        <div className="header" >
             <a className="header__title" href="/">
                 <h1 >{title}</h1>
             </a>
@@ -22,6 +22,6 @@ export default function header({title, counter}){
                 </Button>
 
             </div>
-        </header>
+        </div>
     )
 }

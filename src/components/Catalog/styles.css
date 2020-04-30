@@ -1,11 +1,11 @@
 .catalog {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }
 
-@media screen and (min-width: 700px){
-    .catalog{
-        grid-template-columns: repeat(auto-fit, minmax(24%, auto));
-    }
+@media screen and (min-width: 700px) {
+  .catalog {
+    grid-template-columns: repeat(auto-fit, minmax(24%, auto));
+  }
 }

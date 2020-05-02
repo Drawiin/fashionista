@@ -6,7 +6,7 @@ import Header from './components/Header';
 function App() {
   return (
     <>
-      <Header title="Fashionista" counter={99} />
+      <Header />
       <Routes />
     </>
   );

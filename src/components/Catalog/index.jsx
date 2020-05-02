@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import './styles.css';
 
 import Product from '../Product';
 
-export default function Catalog({ products }) {
+function Catalog({ products }) {
   return (
     <ul className="catalog">
       {products.map(({ sizes: [{ sku }], ...rest }) => (
@@ -13,3 +13,5 @@ export default function Catalog({ products }) {
     </ul>
   );
 }
+
+export default memo(Catalog);

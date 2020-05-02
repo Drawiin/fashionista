@@ -3,22 +3,25 @@ import { FiShoppingBag, FiSearch } from 'react-icons/fi';
 
 import './styles.css';
 
-import Button from '../Button';
-
-export default function header({ title, counter }) {
+export default function Header() {
   return (
     <div className="header">
       <a className="header__title" href="/">
-        <h1>{title}</h1>
+        <h1>Fashionista</h1>
       </a>
-      <div>
-        <Button>
-          <FiSearch size={28} />
-        </Button>
 
-        <Button counter={counter}>
+      <div>
+        <button className="button" type="button">
+          <FiSearch size={28} />
+        </button>
+
+        <button className="button" type="button">
           <FiShoppingBag size={28} />
-        </Button>
+
+          <span className="button__badge">
+            <span>99</span>
+          </span>
+        </button>
       </div>
     </div>
   );

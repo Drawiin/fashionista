@@ -2,22 +2,36 @@ import React from 'react';
 
 import './styles.css';
 
-export default function ProductInfo() {
-  const image =
-    'https://d3l7rqep7l31az.cloudfront.net/images/products/20002570_002_catalog_1.jpg?1459948578';
+export default function ProductInfo({ location: { state } }) {
+  function showDiscountPercentage() {
+    if (state.onSale) {
+      return (
+        <span className="product__sale">
+          <span>{}</span>
+        </span>
+      );
+    }
+    return null;
+  }
+
+  const placeholder =
+    'https://via.placeholder.com/470x594/FFFFFF/?text=Imagem+Indispon%C3%ADvel';
 
   return (
     <div className="productInfo">
       <div className="productInfo__container">
         <figure className="productInfo__img">
-          <img src={image} alt="REGATA ALCINHA FOLK" />
+          {showDiscountPercentage}
+          <img src={state.image || placeholder} alt="REGATA ALCINHA FOLK" />
         </figure>
 
         <div className="productInfo__description">
-          <h2 className="productInfo__name">REGATA ALCINHA FOLK</h2>
+          <h2 className="productInfo__name">{state.name}</h2>
 
           <p className="paymentOptions">
-            <span className="paymentOptions__fullPrice">R$10,00</span>
+            <span className="paymentOptions__fullPrice">
+              {state.actualPrice}
+            </span>
             <span className="paymentOptions__installments">3X de R$3,99</span>
           </p>
 

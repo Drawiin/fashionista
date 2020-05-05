@@ -10,16 +10,23 @@ export default function Home() {
 
   async function loadProducts() {
     try {
-      const response = await api.get('catalog');
+      const response = await api.request.get('catalog');
       const { data } = response;
       setProducts(data);
     } catch (error) {
-      console.error(`Não foi possivel carregar os produtos \n ${error}`);
+      if (api.isCancel(error)) {
+        console.log('cancelled');
+      } else {
+        throw error;
+      }
     }
   }
 
   useEffect(() => {
     loadProducts();
+    return () => {
+      api.abortRequest();
+    };
   }, [products]);
 
   return (

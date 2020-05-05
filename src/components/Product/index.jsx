@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import './styles.css';
 
+import placeholder from '../../assets/images/placeholder';
+
 export default function Product({
   name,
   image,
@@ -10,19 +12,15 @@ export default function Product({
   discount_percentage: discountPercentage,
   regular_price: regularPrice,
   actual_price: actualPrice,
+  sizes,
+  installments,
 }) {
-  const placeholder =
-    'https://via.placeholder.com/470x594/FFFFFF/?text=Imagem+Indispon%C3%ADvel';
-
   function showDiscountPercentage() {
-    if (onSale) {
-      return (
-        <span className="product__sale">
-          <span>{discountPercentage}</span>
-        </span>
-      );
-    }
-    return null;
+    return onSale ? (
+      <span className="product__discount">
+        <span>{discountPercentage}</span>
+      </span>
+    ) : null;
   }
 
   function showRegularPrice() {
@@ -42,6 +40,9 @@ export default function Product({
             image,
             actualPrice,
             onSale,
+            sizes,
+            discountPercentage,
+            installments,
           },
         }}
       >
@@ -49,7 +50,7 @@ export default function Product({
         <figure className="product__img">
           <img src={image || placeholder} alt="clothes" />
         </figure>
-        <div className="product__description">
+        <div className="product__info">
           <p className="product__name">{name}</p>
 
           <p className="product__price">

@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import api from '../../services/api';
-
 import './styles.css';
 
+import api from '../../services/api';
 import Catalog from '../../components/Catalog';
 
 export default function Home() {
@@ -15,7 +14,7 @@ export default function Home() {
       const { data } = response;
       setProducts(data);
     } catch (error) {
-      alert(`Não foi possivel carregar os produtos \n ${error}`);
+      console.error(`Não foi possivel carregar os produtos \n ${error}`);
     }
   }
 

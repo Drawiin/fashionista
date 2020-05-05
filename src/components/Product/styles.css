@@ -8,7 +8,7 @@
   cursor: pointer;
 }
 
-.product__sale {
+.product__discount {
   background-color: #000000;
   color: white;
   font-size: 12px;
@@ -23,11 +23,11 @@
   width: 100%;
 }
 
-.product__img img {
+.product__img > img {
   width: 100%;
 }
 
-.product__description {
+.product__info {
   padding: 1px;
   text-align: center;
 }
@@ -41,7 +41,7 @@
   padding: 5px 0;
 }
 
-.product__price span {
+.product__price > span {
   margin: 0 2px;
 }
 

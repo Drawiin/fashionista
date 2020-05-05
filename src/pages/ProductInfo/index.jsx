@@ -1,27 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './styles.css';
 
+import placeholder from '../../assets/images/placeholder';
+
 export default function ProductInfo({ location: { state } }) {
+  const [selectedSize, setSelectedSize] = useState(null);
+
   function showDiscountPercentage() {
-    if (state.onSale) {
-      return (
-        <span className="product__sale">
-          <span>{}</span>
-        </span>
-      );
-    }
-    return null;
+    return state.onSale ? (
+      <span className="productInfo__discount">
+        <span>{state.discountPercentage}</span>
+      </span>
+    ) : null;
   }
 
-  const placeholder =
-    'https://via.placeholder.com/470x594/FFFFFF/?text=Imagem+Indispon%C3%ADvel';
+  function handleSizeSelection(sku) {
+    setSelectedSize(sku);
+  }
+
+  function showSizeSelection() {
+    return (
+      <>
+        <h3 className="productInfo__sizes">Escolha um tamanho</h3>
+        <ul className="sizeSelection">
+          {state.sizes.map((size) => {
+            return size.available ? (
+              <li
+                className={
+                  size.sku === selectedSize ? 'size size--selected ' : 'size'
+                }
+              >
+                <button
+                  onClick={() => {
+                    handleSizeSelection(size.sku);
+                  }}
+                  type="button"
+                >
+                  {size.size}
+                </button>
+              </li>
+            ) : null;
+          })}
+        </ul>
+      </>
+    );
+  }
 
   return (
     <div className="productInfo">
       <div className="productInfo__container">
         <figure className="productInfo__img">
-          {showDiscountPercentage}
+          {showDiscountPercentage()}
           <img src={state.image || placeholder} alt="REGATA ALCINHA FOLK" />
         </figure>
 
@@ -32,27 +62,12 @@ export default function ProductInfo({ location: { state } }) {
             <span className="paymentOptions__fullPrice">
               {state.actualPrice}
             </span>
-            <span className="paymentOptions__installments">3X de R$3,99</span>
+            <span className="paymentOptions__installments">
+              {'ou em até '}
+              {state.installments}
+            </span>
           </p>
-
-          <h3 className="productInfo__sizes">Escolha um tamanho</h3>
-          <ul className="sizeSelection">
-            <li className="size">
-              <button type="button">P</button>
-            </li>
-
-            <li className="size">
-              <button type="button">M</button>
-            </li>
-
-            <li className="size size--selected">
-              <button type="button">G</button>
-            </li>
-
-            <li className="size">
-              <button type="button">GG</button>
-            </li>
-          </ul>
+          {showSizeSelection()}
           <div className="product__addButton">
             <button type="button">Adicionar a Sacola</button>
           </div>

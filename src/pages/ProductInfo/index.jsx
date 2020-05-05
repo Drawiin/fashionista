@@ -20,6 +20,9 @@ export default function ProductInfo({ location: { state } }) {
   }
 
   function showSizeSelection() {
+    if (state.sizes.length === 1) {
+      return null;
+    }
     return (
       <>
         <h3 className="productInfo__sizes">Escolha um tamanho</h3>
@@ -27,6 +30,7 @@ export default function ProductInfo({ location: { state } }) {
           {state.sizes.map((size) => {
             return size.available ? (
               <li
+                key={size.sku}
                 className={
                   size.sku === selectedSize ? 'size size--selected ' : 'size'
                 }
@@ -45,6 +49,10 @@ export default function ProductInfo({ location: { state } }) {
         </ul>
       </>
     );
+  }
+
+  function handleAddTocart() {
+    // TO DO
   }
 
   return (

@@ -20,7 +20,7 @@
 
 .productInfo__discount {
   background-color: #000000;
-  color: white;
+  color: #ffffff;
   font-size: 12px;
   font-weight: 700;
   position: absolute;
@@ -76,25 +76,30 @@
 
 .paymentOptions__installments {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 700;
   color: #616161;
   margin: 0 4px;
 }
 
 .productInfo__sizes {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 700;
   margin: 8px 0;
   color: #616166;
 }
 
+.warning {
+  color: #f44336;
+  font-weight: 500;
+  font-size: 14px;
+}
 .sizeSelection {
   display: flex;
   margin: 8px 0;
 }
 
 .size {
-  margin: 0 4px;
+  margin-right: 8px;
 }
 
 .size > button {

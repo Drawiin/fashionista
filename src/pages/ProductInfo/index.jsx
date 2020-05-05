@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './styles.css';
 
@@ -6,6 +6,13 @@ import placeholder from '../../assets/images/placeholder';
 
 export default function ProductInfo({ location: { state } }) {
   const [selectedSize, setSelectedSize] = useState(null);
+  const [sizeRiqueride, setSizeRiquerid] = useState(false);
+
+  useEffect(() => {
+    if (state.sizes.length === 1) {
+      setSelectedSize(state.sizes[0].sku);
+    }
+  }, [state.sizes]);
 
   function showDiscountPercentage() {
     return state.onSale ? (
@@ -19,6 +26,12 @@ export default function ProductInfo({ location: { state } }) {
     setSelectedSize(sku);
   }
 
+  function showSizeRequired() {
+    return sizeRiqueride ? (
+      <span className="warning">por favor selecione um tamanho</span>
+    ) : null;
+  }
+
   function showSizeSelection() {
     if (state.sizes.length === 1) {
       return null;
@@ -26,6 +39,7 @@ export default function ProductInfo({ location: { state } }) {
     return (
       <>
         <h3 className="productInfo__sizes">Escolha um tamanho</h3>
+        {showSizeRequired()}
         <ul className="sizeSelection">
           {state.sizes.map((size) => {
             return size.available ? (
@@ -51,8 +65,16 @@ export default function ProductInfo({ location: { state } }) {
     );
   }
 
+  function addToCart() {
+    console.log(selectedSize);
+  }
+
   function handleAddTocart() {
-    // TO DO
+    if (selectedSize === null) {
+      setSizeRiquerid(true);
+    } else {
+      addToCart();
+    }
   }
 
   return (
@@ -77,7 +99,9 @@ export default function ProductInfo({ location: { state } }) {
           </p>
           {showSizeSelection()}
           <div className="product__addButton">
-            <button type="button">Adicionar a Sacola</button>
+            <button type="button" onClick={handleAddTocart}>
+              Adicionar a Sacola
+            </button>
           </div>
         </div>
       </div>

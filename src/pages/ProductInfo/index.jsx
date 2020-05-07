@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import './styles.css';
 
+import Header from '../../components/Header';
+
 import placeholder from '../../assets/images/placeholder';
 
 export default function ProductInfo({ location: { state } }) {
@@ -78,33 +80,36 @@ export default function ProductInfo({ location: { state } }) {
   }
 
   return (
-    <div className="productInfo">
-      <div className="productInfo__container">
-        <figure className="productInfo__img">
-          {showDiscountPercentage()}
-          <img src={state.image || placeholder} alt="REGATA ALCINHA FOLK" />
-        </figure>
+    <>
+      <Header />
+      <div className="productInfo">
+        <div className="productInfo__container">
+          <figure className="productInfo__img">
+            {showDiscountPercentage()}
+            <img src={state.image || placeholder} alt="REGATA ALCINHA FOLK" />
+          </figure>
 
-        <div className="productInfo__description">
-          <h2 className="productInfo__name">{state.name}</h2>
+          <div className="productInfo__description">
+            <h2 className="productInfo__name">{state.name}</h2>
 
-          <p className="paymentOptions">
-            <span className="paymentOptions__fullPrice">
-              {state.actualPrice}
-            </span>
-            <span className="paymentOptions__installments">
-              {'ou em até '}
-              {state.installments}
-            </span>
-          </p>
-          {showSizeSelection()}
-          <div className="product__addButton">
-            <button type="button" onClick={handleAddTocart}>
-              Adicionar a Sacola
-            </button>
+            <p className="paymentOptions">
+              <span className="paymentOptions__fullPrice">
+                {state.actualPrice}
+              </span>
+              <span className="paymentOptions__installments">
+                {'ou em até '}
+                {state.installments}
+              </span>
+            </p>
+            {showSizeSelection()}
+            <div className="product__addButton">
+              <button type="button" onClick={handleAddTocart}>
+                Adicionar a Sacola
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

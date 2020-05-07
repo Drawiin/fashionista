@@ -4,6 +4,7 @@ import './styles.css';
 
 import api from '../../services/api';
 import Catalog from '../../components/Catalog';
+import Header from '../../components/Header';
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -30,14 +31,17 @@ export default function Home() {
   }, [products]);
 
   return (
-    <div className="home">
-      <div className="home__info">
-        <span>
-          Total:
-          {products.length}
-        </span>
+    <>
+      <Header />
+      <div className="home">
+        <div className="home__info">
+          <span>
+            Total:
+            {products.length}
+          </span>
+        </div>
+        <Catalog products={products} />
       </div>
-      <Catalog products={products} />
-    </div>
+    </>
   );
 }

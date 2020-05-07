@@ -6,7 +6,7 @@ import api from '../../services/api';
 import Products from '../../components/Products';
 import Topbar from '../../components/Topbar';
 
-export default function Home() {
+export default function Catalog() {
   const [products, setProducts] = useState([]);
 
   async function loadProducts() {

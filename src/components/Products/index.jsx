@@ -4,7 +4,7 @@ import './styles.css';
 
 import Product from '../Product';
 
-function Catalog({ products }) {
+function Products({ products }) {
   function keyExtractor(product) {
     const {
       sizes: [size],
@@ -33,4 +33,4 @@ function Catalog({ products }) {
   );
 }
 
-export default memo(Catalog);
+export default memo(Products);

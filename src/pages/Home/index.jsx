@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './styles.css';
 
 import api from '../../services/api';
-import Catalog from '../../components/Catalog';
+import Products from '../../components/Products';
 import Topbar from '../../components/Topbar';
 
 export default function Home() {
@@ -40,7 +40,7 @@ export default function Home() {
             {products.length}
           </span>
         </div>
-        <Catalog products={products} />
+        <Products products={products} />
       </div>
     </>
   );

@@ -1,13 +1,13 @@
-.home {
+.catalog {
   padding: 16px;
 }
 
-.home__info {
+.catalog__info {
   display: flex;
   margin: 16px 0;
 }
 
-.home__info > span {
+.catalog__info > span {
   font-size: 18px;
   color: #616161;
 }

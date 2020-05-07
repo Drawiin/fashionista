@@ -33,8 +33,8 @@ export default function Catalog() {
   return (
     <>
       <Topbar />
-      <div className="home">
-        <div className="home__info">
+      <div className="catalog">
+        <div className="catalog__info">
           <span>
             Total:
             {products.length}

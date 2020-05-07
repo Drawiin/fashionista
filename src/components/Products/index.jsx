@@ -15,7 +15,7 @@ function Products({ products }) {
   }
 
   return (
-    <ul className="catalog">
+    <ul className="products">
       {products.map((product) => (
         <Product
           key={keyExtractor(product)}

@@ -24,10 +24,9 @@ export default function Product({
   }
 
   function showRegularPrice() {
-    if (onSale) {
-      return <span className="product__regularPrice">{regularPrice}</span>;
-    }
-    return null;
+    return onSale ? (
+      <span className="product__regularPrice">{regularPrice}</span>
+    ) : null;
   }
 
   return (

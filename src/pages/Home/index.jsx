@@ -4,7 +4,7 @@ import './styles.css';
 
 import api from '../../services/api';
 import Catalog from '../../components/Catalog';
-import Header from '../../components/Header';
+import Topbar from '../../components/Topbar';
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -32,7 +32,7 @@ export default function Home() {
 
   return (
     <>
-      <Header />
+      <Topbar />
       <div className="home">
         <div className="home__info">
           <span>

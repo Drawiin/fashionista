@@ -3,7 +3,7 @@ import { FiShoppingBag, FiSearch } from 'react-icons/fi';
 
 import './styles.css';
 
-export default function Header() {
+export default function Topbar() {
   return (
     <div className="header">
       <a className="header__title" href="/">

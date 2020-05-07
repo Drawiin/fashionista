@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import './styles.css';
 
-import Header from '../../components/Header';
+import Topbar from '../../components/Topbar';
 
 import placeholder from '../../assets/images/placeholder';
 
@@ -81,7 +81,7 @@ export default function ProductInfo({ location: { state } }) {
 
   return (
     <>
-      <Header />
+      <Topbar />
       <div className="productInfo">
         <div className="productInfo__container">
           <figure className="productInfo__img">

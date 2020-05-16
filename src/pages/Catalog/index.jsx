@@ -14,16 +14,13 @@ export default function Catalog() {
       const { data } = await api.request.get('catalog');
       setProducts(data);
     } catch (error) {
-      if (!api.isCancel(error)) {
-        throw error;
-      }
+      throw error;
     }
   }
 
   useEffect(() => {
     loadProducts();
-    return () => api.abortRequest();
-  });
+  }, []);
 
   return (
     <>

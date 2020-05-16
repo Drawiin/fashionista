@@ -1,14 +1,15 @@
 import React from 'react';
 import { FiShoppingBag, FiSearch } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 import './styles.css';
 
 export default function Topbar() {
   return (
     <div className="topbar">
-      <a className="topbar__title" href="/">
+      <Link className="topbar__title" to="/">
         <h1>Fashionista</h1>
-      </a>
+      </Link>
 
       <div>
         <button className="button" type="button">

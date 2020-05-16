@@ -18,6 +18,7 @@ function Products({ products }) {
     <ul className="products">
       {products.map((product) => (
         <Product
+          // To-Do Passar Somente os Produtos
           key={keyExtractor(product)}
           name={product.name}
           image={product.image}

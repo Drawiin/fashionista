@@ -15,6 +15,7 @@ export default function Product({
   sizes,
   installments,
 }) {
+  //TO-DO recive only a product object
   function showDiscountPercentage() {
     return onSale ? (
       <span className="product__discount">

@@ -11,13 +11,10 @@ export default function Catalog() {
 
   async function loadProducts() {
     try {
-      const response = await api.request.get('catalog');
-      const { data } = response;
+      const { data } = await api.request.get('catalog');
       setProducts(data);
     } catch (error) {
-      if (api.isCancel(error)) {
-        console.log('cancelled');
-      } else {
+      if (!api.isCancel(error)) {
         throw error;
       }
     }
@@ -25,10 +22,8 @@ export default function Catalog() {
 
   useEffect(() => {
     loadProducts();
-    return () => {
-      api.abortRequest();
-    };
-  }, [products]);
+    return () => api.abortRequest();
+  });
 
   return (
     <>

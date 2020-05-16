@@ -5,8 +5,8 @@ import './styles.css';
 
 export default function Topbar() {
   return (
-    <div className="header">
-      <a className="header__title" href="/">
+    <div className="topbar">
+      <a className="topbar__title" href="/">
         <h1>Fashionista</h1>
       </a>
 
@@ -19,7 +19,7 @@ export default function Topbar() {
           <FiShoppingBag size={28} />
 
           <span className="button__badge">
-            <span>99</span>
+            <span>9</span>
           </span>
         </button>
       </div>

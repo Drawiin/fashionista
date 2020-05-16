@@ -6,7 +6,7 @@ import Topbar from '../../components/Topbar';
 
 import placeholder from '../../assets/images/placeholder';
 
-export default function ProductInfo({ location: { state } }) {
+export default function ProductPage({ location: { state } }) {
   const [selectedSize, setSelectedSize] = useState(null);
   const [sizeRiqueride, setSizeRiquerid] = useState(false);
 
@@ -83,7 +83,7 @@ export default function ProductInfo({ location: { state } }) {
     <>
       <Topbar />
       <div className="productInfo">
-        <div className="productInfo__container">
+        <div className="container">
           <figure className="productInfo__img">
             {showDiscountPercentage()}
             <img src={state.image || placeholder} alt="REGATA ALCINHA FOLK" />

@@ -11,7 +11,7 @@ export default function Catalog() {
 
   async function loadProducts() {
     try {
-      const { data } = await api.request.get('catalog');
+      const { data } = await api.get('catalog');
       setProducts(data);
     } catch (error) {
       throw error;

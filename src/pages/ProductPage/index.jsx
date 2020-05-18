@@ -3,12 +3,13 @@ import React, { useState, useEffect } from 'react';
 import './styles.css';
 
 import Topbar from '../../components/Topbar';
+import SizeSelector from '../../components/SizeSelector';
 
 import placeholder from '../../assets/images/placeholder';
 
 export default function ProductPage({ location: { state } }) {
   const [selectedSize, setSelectedSize] = useState(null);
-  const [sizeRiqueride, setSizeRiquerid] = useState(false);
+  const [sizeRequired, setSizeRequired] = useState(false);
 
   useEffect(() => {
     if (state.sizes.length === 1) {
@@ -18,7 +19,7 @@ export default function ProductPage({ location: { state } }) {
 
   function showDiscountPercentage() {
     return state.onSale ? (
-      <span className="productInfo__discount">
+      <span className="productPage__discount">
         <span>{state.discountPercentage}</span>
       </span>
     ) : null;
@@ -28,42 +29,17 @@ export default function ProductPage({ location: { state } }) {
     setSelectedSize(sku);
   }
 
-  function showSizeRequired() {
-    return sizeRiqueride ? (
-      <span className="warning">por favor selecione um tamanho</span>
-    ) : null;
-  }
-
-  function showSizeSelection() {
+  function showSizeSelector() {
     if (state.sizes.length === 1) {
       return null;
     }
     return (
-      <>
-        <h3 className="productInfo__sizes">Escolha um tamanho</h3>
-        {showSizeRequired()}
-        <ul className="sizeSelection">
-          {state.sizes.map((size) => {
-            return size.available ? (
-              <li
-                key={size.sku}
-                className={
-                  size.sku === selectedSize ? 'size size--selected ' : 'size'
-                }
-              >
-                <button
-                  onClick={() => {
-                    handleSizeSelection(size.sku);
-                  }}
-                  type="button"
-                >
-                  {size.size}
-                </button>
-              </li>
-            ) : null;
-          })}
-        </ul>
-      </>
+      <SizeSelector
+        sizes={state.sizes}
+        warning={sizeRequired}
+        selected={selectedSize}
+        handleSizeSelection={handleSizeSelection}
+      />
     );
   }
 
@@ -73,7 +49,7 @@ export default function ProductPage({ location: { state } }) {
 
   function handleAddTocart() {
     if (selectedSize === null) {
-      setSizeRiquerid(true);
+      setSizeRequired(true);
     } else {
       addToCart();
     }
@@ -82,27 +58,28 @@ export default function ProductPage({ location: { state } }) {
   return (
     <>
       <Topbar />
-      <div className="productInfo">
+      <div className="productPage">
         <div className="container">
-          <figure className="productInfo__img">
+          <figure className="productPage__img">
             {showDiscountPercentage()}
-            <img src={state.image || placeholder} alt="REGATA ALCINHA FOLK" />
+            <img src={state.image || placeholder} alt={state.name} />
           </figure>
 
-          <div className="productInfo__description">
-            <h2 className="productInfo__name">{state.name}</h2>
+          <div className="productPage__description">
+            <h2 className="productPage__name">{state.name}</h2>
 
-            <p className="paymentOptions">
-              <span className="paymentOptions__fullPrice">
-                {state.actualPrice}
-              </span>
-              <span className="paymentOptions__installments">
+            <p className="payment">
+              <span className="payment__price">{state.actualPrice}</span>
+
+              <span className="payment__installments">
                 {'ou em até '}
                 {state.installments}
               </span>
             </p>
-            {showSizeSelection()}
-            <div className="product__addButton">
+
+            {showSizeSelector()}
+
+            <div className="addButton">
               <button type="button" onClick={handleAddTocart}>
                 Adicionar a Sacola
               </button>

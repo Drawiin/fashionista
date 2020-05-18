@@ -1,0 +1,42 @@
+.title {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 8px 0;
+  color: #616166;
+}
+
+.warning {
+  color: #f44336;
+  font-weight: 500;
+  font-size: 14px;
+}
+.sizes {
+  display: flex;
+  margin: 8px 0;
+}
+
+.size {
+  margin-right: 8px;
+}
+
+.size > button {
+  font-size: 18px;
+  font-weight: 500;
+  border: 1px solid #000000;
+  padding: 5px;
+  height: 35px;
+  width: 35px;
+  border-radius: 5px;
+  transition: filter 0.5s;
+}
+
+.size > button:hover {
+  cursor: pointer;
+  filter: opacity(0.9);
+}
+
+.size--selected > button {
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 500;
+}

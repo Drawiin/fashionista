@@ -1,10 +1,10 @@
-.productInfo {
+.productPage {
   display: flex;
   min-height: 100vh;
   justify-content: center;
 }
 
-.productInfo .container {
+.productPage .container {
   width: 1000px;
   padding: 16px;
   display: flex;
@@ -12,13 +12,13 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .productInfo .container {
+  .productPage .container {
     width: 100%;
     padding-bottom: 80px;
   }
 }
 
-.productInfo__discount {
+.productPage__discount {
   background-color: #000000;
   color: #ffffff;
   font-size: 12px;
@@ -29,102 +29,59 @@
   padding: 5px;
 }
 
-.productInfo__img {
+.productPage__img {
   width: 50%;
   width: auto;
   position: relative;
 }
 
 @media screen and (max-width: 1200px) {
-  .productInfo__img {
+  .productPage__img {
     width: 100%;
   }
 }
 
-.productInfo__img img {
+.productPage__img img {
   width: 100%;
 }
 
-.productInfo__description {
+.productPage__description {
   padding: 0 16px;
   width: 50%;
 }
 
 @media screen and (max-width: 1200px) {
-  .productInfo__description {
+  .productPage__description {
     width: 100%;
     padding: 0px;
   }
 }
 
-.productInfo__name {
+.productPage__name {
   font-size: 22px;
   margin: 8px 0;
 }
 
-.paymentOptions {
+.payment {
   margin: 8px 0;
   display: flex;
   align-items: center;
 }
 
-.paymentOptions__fullPrice {
+.payment__price {
   font-size: 16px;
   font-weight: 700;
   margin: 0 4px;
 }
 
-.paymentOptions__installments {
+.payment__installments {
   font-size: 14px;
   font-weight: 700;
   color: #616161;
   margin: 0 4px;
 }
 
-.productInfo__sizes {
-  font-size: 14px;
-  font-weight: 700;
-  margin: 8px 0;
-  color: #616166;
-}
-
-.warning {
-  color: #f44336;
-  font-weight: 500;
-  font-size: 14px;
-}
-.sizeSelection {
-  display: flex;
-  margin: 8px 0;
-}
-
-.size {
-  margin-right: 8px;
-}
-
-.size > button {
-  font-size: 18px;
-  font-weight: 500;
-  border: 1px solid #000000;
-  padding: 5px;
-  height: 35px;
-  width: 35px;
-  border-radius: 5px;
-  transition: filter 0.5s;
-}
-
-.size > button:hover {
-  cursor: pointer;
-  filter: opacity(0.9);
-}
-
-.size--selected > button {
-  background-color: #000000;
-  color: #ffffff;
-  font-weight: 500;
-}
-
-.product__addButton > button {
+.addButton > button {
   margin: 8px 0;
   font-size: 16px;
   font-weight: 500;
@@ -138,7 +95,7 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .product__addButton {
+  .addButton {
     display: flex;
     position: fixed;
     bottom: 10px;
@@ -147,7 +104,7 @@
     width: 100%;
     margin: 0;
   }
-  .product__addButton > button {
+  .addButton > button {
     width: 100%;
     height: 40px;
   }

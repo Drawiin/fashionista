@@ -10,17 +10,25 @@ import placeholder from '../../assets/images/placeholder';
 export default function ProductPage({ location: { state } }) {
   const [selectedSize, setSelectedSize] = useState(null);
   const [sizeRequired, setSizeRequired] = useState(false);
-
+  const { product } = state;
   useEffect(() => {
-    if (state.sizes.length === 1) {
-      setSelectedSize(state.sizes[0].sku);
+    if (productHasUniqueSize()) {
+      setUniqueSize();
     }
-  }, [state.sizes]);
+  });
+
+  function productHasUniqueSize() {
+    return product.sizes.length === 1 && product.sizes[0].size === 'U';
+  }
+
+  function setUniqueSize() {
+    setSelectedSize(product.sizes[0].sku);
+  }
 
   function showDiscountPercentage() {
-    return state.onSale ? (
+    return product.on_sale ? (
       <span className="productPage__discount">
-        <span>{state.discountPercentage}</span>
+        <span>{product.discount_percentage}</span>
       </span>
     ) : null;
   }
@@ -30,16 +38,15 @@ export default function ProductPage({ location: { state } }) {
   }
 
   function showSizeSelector() {
-    if (state.sizes.length === 1) {
-      return null;
-    }
-    return (
+    return !productHasUniqueSize() ? (
       <SizeSelector
-        sizes={state.sizes}
+        sizes={product.sizes}
         warning={sizeRequired}
         selected={selectedSize}
         handleSizeSelection={handleSizeSelection}
       />
+    ) : (
+      <p>Tamanho Unico</p>
     );
   }
 
@@ -62,18 +69,18 @@ export default function ProductPage({ location: { state } }) {
         <div className="container">
           <figure className="productPage__img">
             {showDiscountPercentage()}
-            <img src={state.image || placeholder} alt={state.name} />
+            <img src={product.image || placeholder} alt={product.name} />
           </figure>
 
           <div className="productPage__description">
-            <h2 className="productPage__name">{state.name}</h2>
+            <h2 className="productPage__name">{product.name}</h2>
 
             <p className="payment">
-              <span className="payment__price">{state.actualPrice}</span>
+              <span className="payment__price">{product.actual_price}</span>
 
               <span className="payment__installments">
                 {'ou em até '}
-                {state.installments}
+                {product.installments}
               </span>
             </p>
 

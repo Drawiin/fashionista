@@ -5,28 +5,19 @@ import './styles.css';
 
 import placeholder from '../../assets/images/placeholder';
 
-export default function Product({
-  name,
-  image,
-  on_sale: onSale,
-  discount_percentage: discountPercentage,
-  regular_price: regularPrice,
-  actual_price: actualPrice,
-  sizes,
-  installments,
-}) {
+export default function Product({ product }) {
   //TO-DO recive only a product object
   function showDiscountPercentage() {
-    return onSale ? (
+    return product.on_sale ? (
       <span className="product__discount">
-        <span>{discountPercentage}</span>
+        <span>{product.discount_percentage}</span>
       </span>
     ) : null;
   }
 
   function showRegularPrice() {
-    return onSale ? (
-      <span className="product__regularPrice">{regularPrice}</span>
+    return product.on_sale ? (
+      <span className="product__regularPrice">{product.regular_price}</span>
     ) : null;
   }
 
@@ -34,28 +25,22 @@ export default function Product({
     <li className="product">
       <Link
         to={{
-          pathname: '/product',
+          pathname: `product/${product.name}`,
           state: {
-            name,
-            image,
-            actualPrice,
-            onSale,
-            sizes,
-            discountPercentage,
-            installments,
+            product,
           },
         }}
       >
         {showDiscountPercentage()}
         <figure className="product__img">
-          <img src={image || placeholder} alt="clothes" />
+          <img src={product.image || placeholder} alt="clothes" />
         </figure>
         <div className="product__info">
-          <p className="product__name">{name}</p>
+          <p className="product__name">{product.name}</p>
 
           <p className="product__price">
             {showRegularPrice()}
-            <span className="product__actualPrice">{actualPrice}</span>
+            <span className="product__actualPrice">{product.actual_price}</span>
           </p>
         </div>
       </Link>

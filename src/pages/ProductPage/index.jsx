@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from 'react';
-
-import './styles.css';
+import { connect } from 'react-redux';
 
 import Topbar from '../../components/Topbar';
 import SizeSelector from '../../components/SizeSelector';
+import { addProduct } from '../../ducks/actions';
 
 import placeholder from '../../assets/images/placeholder';
 
-export default function ProductPage({ location: { state } }) {
+import './styles.css';
+
+function mapDispatchToProps(dispatch) {
+  return {
+    addProduct: (product) => dispatch(addProduct(product)),
+  };
+}
+
+function ProductPage({ location: { state }, addProduct }) {
   const [selectedSize, setSelectedSize] = useState(null);
   const [sizeRequired, setSizeRequired] = useState(false);
   const { product } = state;
@@ -51,7 +59,9 @@ export default function ProductPage({ location: { state } }) {
   }
 
   function addToCart() {
-    console.log(selectedSize);
+    addProduct({
+      sku: selectedSize,
+    });
   }
 
   function handleAddTocart() {
@@ -97,3 +107,5 @@ export default function ProductPage({ location: { state } }) {
     </>
   );
 }
+
+export default connect(null, mapDispatchToProps)(ProductPage);

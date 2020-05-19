@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { FiArrowLeft } from 'react-icons/fi';
 
 import { addProduct } from '../../ducks/actions';
 
@@ -14,12 +15,26 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state) {
   return { shoppingCart: state.shoppingCart };
 }
-function ShoppingCart(props) {
+function ShoppingCart({ shoppingCart, show = false }) {
   return (
     <div className="shoppingCart">
-      <h2>Carrinho: </h2>
-      <ul className="shoppingCart__products">{console.log(props)}</ul>
-      <span className="shoppingCart__total"></span>
+      <header className="shoppingCart__header ">
+        <button className="shoppingCart_close">
+          <FiArrowLeft color="#000000" size={20} />
+        </button>
+        <h2 className="shoppingCart__title">Sacola</h2>
+      </header>
+      <ul className="shoppingCart__products">
+        {Object.entries(shoppingCart).map(([sku, quantity]) => (
+          <li className="shoppingCart__product" key={sku}>
+            <p>{sku}</p>
+            <p>{quantity}</p>
+          </li>
+        ))}
+      </ul>
+      <footer className="shoppingCart__footer">
+        <span className="shoppingCart__total">Subtotal - R$100</span>
+      </footer>
     </div>
   );
 }

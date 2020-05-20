@@ -9,6 +9,16 @@
   height: 100%;
   background-color: #ffffff;
   box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.1);
+  animation: linear 300ms slide;
+}
+
+@keyframes slide {
+  from {
+    right: -500px;
+  }
+  to {
+    right: 0;
+  }
 }
 
 .hidden {
@@ -61,4 +71,14 @@
 .shoppingCart__total {
   font-size: 1.2rem;
   color: #ffffff;
+}
+
+.darknedBackground {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
 }

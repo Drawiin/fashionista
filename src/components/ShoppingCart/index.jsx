@@ -1,25 +1,17 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { FiArrowLeft } from 'react-icons/fi';
-
-import { addProduct } from '../../ducks/actions';
 
 import './styles.css';
 
-function mapDispatchToProps(dispatch) {
-  return {
-    addProduct: (product) => dispatch(addProduct(product)),
-  };
-}
-
-function mapStateToProps(state) {
-  return { shoppingCart: state.shoppingCart };
-}
-function ShoppingCart({ shoppingCart, show = false }) {
+export default function ShoppingCart({
+  shoppingCart,
+  show = true,
+  toggleCart,
+}) {
   return (
-    <div className="shoppingCart">
+    <div className={`shoppingCart ${!show ? 'hidden' : ''}`}>
       <header className="shoppingCart__header ">
-        <button className="shoppingCart_close">
+        <button className="shoppingCart_close" onClick={toggleCart}>
           <FiArrowLeft color="#000000" size={20} />
         </button>
         <h2 className="shoppingCart__title">Sacola</h2>
@@ -38,5 +30,3 @@ function ShoppingCart({ shoppingCart, show = false }) {
     </div>
   );
 }
-
-export default connect(mapStateToProps, mapDispatchToProps)(ShoppingCart);

@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 
 import './styles.css';
 
-import placeholder from '../../assets/images/placeholder';
-
 export default function Product({ product }) {
   //TO-DO recive only a product object
   function showDiscountPercentage() {

@@ -1,4 +1,4 @@
-import { ADD_PRODUCT } from '../constants/action-types';
+import { ADD_PRODUCT, REMOVE_PRODUCT } from '../constants/action-types';
 
 const initialState = {
   shoppingCart: {},
@@ -14,6 +14,14 @@ function rootReducer(state = initialState, action) {
       ? newShoppingCart[payload.sku] + 1
       : 1;
 
+    return { ...state, ...{ shoppingCart: newShoppingCart } };
+  }
+
+  if (type === REMOVE_PRODUCT) {
+    const newShoppingCart = { ...state.shoppingCart };
+    if(newShoppingCart[payload.sku]){
+      delete newShoppingCart[payload.sku]
+    }
     return { ...state, ...{ shoppingCart: newShoppingCart } };
   }
 

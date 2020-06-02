@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { FiArrowLeft } from 'react-icons/fi';
 
 import './styles.css';
-import { useEffect } from 'react';
 
 import placeholder from '../../assets/images/placeholder';
 

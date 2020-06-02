@@ -4,7 +4,6 @@ import './styles.css';
 
 import api from '../../services/api';
 import Products from '../../components/Products';
-import Topbar from '../../components/Topbar';
 
 export default function Catalog() {
   const [products, setProducts] = useState([]);
@@ -24,7 +23,6 @@ export default function Catalog() {
 
   return (
     <>
-      <Topbar />
       <div className="catalog">
         <div className="catalog__info">
           <span>

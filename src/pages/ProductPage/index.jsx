@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import Topbar from '../../components/Topbar';
 import SizeSelector from '../../components/SizeSelector';
 import { addProduct } from '../../ducks/actions';
 
@@ -74,7 +73,6 @@ function ProductPage({ location: { state }, addProduct }) {
 
   return (
     <>
-      <Topbar />
       <div className="productPage">
         <div className="container">
           <figure className="productPage__img">

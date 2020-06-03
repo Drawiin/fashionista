@@ -44,7 +44,7 @@ function decrementProduct(state, payload) {
     if (newShoppingCart[payload.sku].quantity > 1) {
       newShoppingCart[payload.sku] = {
         ...newShoppingCart[payload.sku],
-        ...{ quantity: newShoppingCart[payload.sku] - 1 },
+        ...{ quantity: newShoppingCart[payload.sku].quantity - 1 },
       };
     } else {
       return removeProduct(state, payload);

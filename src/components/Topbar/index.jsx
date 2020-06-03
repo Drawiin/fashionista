@@ -42,7 +42,7 @@ function Topbar({ shoppingCart }) {
             <FiShoppingBag size={28} />
 
             <span className="button__badge">
-              <span>9</span>
+              <span>{Object.entries(shoppingCart).length}</span>
             </span>
           </button>
         </div>

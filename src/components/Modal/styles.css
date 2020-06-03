@@ -1,0 +1,97 @@
+.modal {
+  position: fixed;
+  top: 0;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+}
+@media screen and (min-width: 800px) {
+  .modal {
+    width: 400px;
+  }
+}
+
+.modal__header {
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+}
+.modal__title {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+}
+
+.modal__background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
+}
+
+.hidden {
+  display: none;
+}
+
+.slideIn {
+  animation: linear 500ms slideIn;
+  right: 0;
+}
+
+@keyframes slideIn {
+  from {
+    right: max(-100%, -400px);
+  }
+  to {
+    right: 0;
+  }
+}
+
+.slideOut {
+  animation: linear 400ms slideOut;
+  right: max(-100%, -400px);
+}
+
+@keyframes slideOut {
+  from {
+    right: 0;
+  }
+
+  to {
+    right: max(-100%, -400px);
+  }
+}
+
+.fadeIn {
+  opacity: 1;
+  animation: linear 400ms fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeOut {
+  animation: linear 400ms fadeOut;
+  display: none;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    display: block;
+  }
+  to {
+    opacity: 0;
+    display: block;
+  }
+}

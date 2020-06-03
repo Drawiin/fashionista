@@ -1,22 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FiShoppingBag, FiSearch } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import ShoppingCart from '../ShoppingCart';
-
 import './styles.css';
+
+import Modal from '../Modal';
+import useModal from '../../hooks';
 
 function mapStateToProps(state) {
   return { shoppingCart: state.shoppingCart };
 }
 
 function Topbar({ shoppingCart }) {
-  const [showCart, setShowCart] = useState(false);
-
-  function toggleCart() {
-    setShowCart(!showCart);
-  }
+  const [cart, toggleCart] = useModal();
+  const [search, toggleSearch] = useModal();
 
   return (
     <>
@@ -26,7 +24,7 @@ function Topbar({ shoppingCart }) {
         </Link>
 
         <div>
-          <button className="button" type="button">
+          <button className="button" type="button" onClick={toggleSearch}>
             <FiSearch size={28} />
           </button>
 
@@ -39,11 +37,9 @@ function Topbar({ shoppingCart }) {
           </button>
         </div>
       </div>
-      <ShoppingCart
-        shoppingCart={shoppingCart}
-        show={showCart}
-        toggleCart={toggleCart}
-      />
+
+      <Modal modal={cart} toggleModal={toggleCart} title="Sacola"></Modal>
+      <Modal modal={search} toggleModal={toggleSearch} title="Busca"></Modal>
     </>
   );
 }

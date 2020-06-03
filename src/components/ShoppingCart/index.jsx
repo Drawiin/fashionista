@@ -1,32 +1,60 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { FiArrowLeft } from 'react-icons/fi';
 
 import './styles.css';
-
-import placeholder from '../../assets/images/placeholder';
 
 export default function ShoppingCart({
   shoppingCart,
   show = true,
   toggleCart,
 }) {
-  function getProductInfo(sku) {
-    return { name: 'Nome', price: 100, image: placeholder };
+  function totalPrice() {
+    let total = 0;
+    Object.entries(shoppingCart).forEach(([sku, data]) => {
+      const number = data.price.slice(2).trim().replace(',', '.');
+      total += parseFloat(number) * data.quantity;
+    });
+    return total;
+  }
+
+  function extractSize(sku) {
+    const size = sku.split('_');
+    return size[size.length - 1];
   }
 
   const content = (
     <>
-      <ul className="shoppingCart__products">
-        {Object.entries(shoppingCart).map(([sku, quantity]) => (
-          <li className="shoppingCart__product" key={sku}>
-            <p>{sku}</p>
-            <p>{quantity}</p>
+      <ul className="shoppingList">
+        {Object.entries(shoppingCart).map(([sku, data]) => (
+          <li className="shoppingProduct" key={sku}>
+            <figure className="shoppingProduct__image">
+              <img src={data.image} alt="" />
+            </figure>
+            <div className="shoppingProduct__info">
+              <p className="shoppingProduct__name">{data.name}</p>
+              <p className="shoppingProduct__size">
+                Tamanho {' ' + extractSize(sku)}
+              </p>
+            </div>
+
+            <div className="shoppingProduct__payment">
+              <p className="shoppingProduct__price">{data.price}</p>
+              {'ou até'}
+              <p className="shoppingProduct__installments">
+                {data.installments}
+              </p>
+            </div>
           </li>
         ))}
       </ul>
 
       <footer className="shoppingCart__footer">
-        <span className="shoppingCart__total">{100}</span>
+        <span className="shoppingCart__total">
+          {Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+          }).format(totalPrice().toFixed(2))}
+        </span>
       </footer>
     </>
   );

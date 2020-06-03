@@ -60,6 +60,10 @@ function ProductPage({ location: { state }, addProduct }) {
   function addToCart() {
     addProduct({
       sku: selectedSize,
+      name: product.name,
+      image: product.image,
+      price: product.actual_price,
+      installments: product.installments,
     });
   }
 

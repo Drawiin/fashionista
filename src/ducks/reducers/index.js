@@ -10,17 +10,31 @@ function rootReducer(state = initialState, action) {
   if (type === ADD_PRODUCT) {
     const newShoppingCart = { ...state.shoppingCart };
 
-    newShoppingCart[payload.sku] = newShoppingCart[payload.sku]
-      ? newShoppingCart[payload.sku] + 1
-      : 1;
+    if (newShoppingCart[payload.sku]) {
+      newShoppingCart[payload.sku] = {
+        quantity: newShoppingCart[payload.sku].quantity + 1,
+        name: payload.name,
+        image: payload.image,
+        price: payload.price,
+        installments: payload.installments,
+      };
+    } else {
+      newShoppingCart[payload.sku] = {
+        quantity: 1,
+        name: payload.name,
+        image: payload.image,
+        price: payload.price,
+        installments: payload.installments,
+      };
+    }
 
     return { ...state, ...{ shoppingCart: newShoppingCart } };
   }
 
   if (type === REMOVE_PRODUCT) {
     const newShoppingCart = { ...state.shoppingCart };
-    if(newShoppingCart[payload.sku]){
-      delete newShoppingCart[payload.sku]
+    if (newShoppingCart[payload.sku]) {
+      delete newShoppingCart[payload.sku];
     }
     return { ...state, ...{ shoppingCart: newShoppingCart } };
   }

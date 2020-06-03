@@ -10,6 +10,7 @@
   background-color: #ffffff;
   box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.1);
   animation: linear 300ms slide;
+  overflow-y: auto;
 }
 
 @keyframes slide {
@@ -47,25 +48,71 @@
   font-size: 1.2rem;
 }
 
-.shoppingCart__products {
+.shoppingList {
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
+  margin-bottom: 4rem;
 }
 
-.shoppingCart__product {
+.shoppingProduct {
   margin-top: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+}
+
+.shoppingProduct__image {
+  width: 100px;
+}
+
+.shoppingProduct__image > img {
+  width: 100%;
+}
+
+.shoppingProduct__info {
+  padding: 0.2rem;
+}
+
+.shoppingProduct__name {
+  font-size: 0.9rem;
+}
+
+.shoppingProduct__size {
+  font-size: 0.9rem;
+  color: #616161;
+}
+
+.shoppingProduct__payment {
+  padding: 0.2rem;
+}
+
+.shoppingProduct__price {
+  font-size: 1.2rem;
+}
+
+.shoppingProduct__installments {
+  font-size: 0.9rem;
+  color: #616161;
 }
 
 .shoppingCart__footer {
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 2.5rem;
   background-color: #000000;
   margin-top: auto;
-  box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+@media screen and (min-width: 800px) {
+  .shoppingCart__footer {
+    width: 400px;
+  }
 }
 
 .shoppingCart__total {

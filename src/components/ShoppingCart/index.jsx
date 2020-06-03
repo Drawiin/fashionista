@@ -50,10 +50,11 @@ export default function ShoppingCart({
 
       <footer className="shoppingCart__footer">
         <span className="shoppingCart__total">
-          {Intl.NumberFormat('pt-BR', {
-            style: 'currency',
-            currency: 'BRL',
-          }).format(totalPrice().toFixed(2))}
+          {'Total ' +
+            Intl.NumberFormat('pt-BR', {
+              style: 'currency',
+              currency: 'BRL',
+            }).format(totalPrice().toFixed(2))}
         </span>
       </footer>
     </>

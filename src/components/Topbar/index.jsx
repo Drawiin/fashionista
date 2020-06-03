@@ -7,6 +7,7 @@ import './styles.css';
 
 import Modal from '../Modal';
 import useModal from '../../hooks';
+import ShoppingCart from '../ShoppingCart';
 
 function mapStateToProps(state) {
   return { shoppingCart: state.shoppingCart };
@@ -38,7 +39,9 @@ function Topbar({ shoppingCart }) {
         </div>
       </div>
 
-      <Modal modal={cart} toggleModal={toggleCart} title="Sacola"></Modal>
+      <Modal modal={cart} toggleModal={toggleCart} title="Sacola">
+        <ShoppingCart />
+      </Modal>
       <Modal modal={search} toggleModal={toggleSearch} title="Busca"></Modal>
     </>
   );

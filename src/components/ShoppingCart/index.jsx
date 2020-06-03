@@ -1,5 +1,10 @@
 import React from 'react';
-import { FiArrowLeft, FiTrash2, FiPlus, FiMinus } from 'react-icons/fi';
+import {
+  FiArrowLeft,
+  FiTrash2,
+  FiPlusSquare,
+  FiMinusSquare,
+} from 'react-icons/fi';
 import { connect } from 'react-redux';
 
 import './styles.css';
@@ -63,10 +68,19 @@ function ShoppingCart({
               <p className="shoppingProduct__size">
                 Tamanho {' ' + extractSize(sku)}
               </p>
-              <div className="shoppingProduct_quantity">
-                <buttton className="shoppingProduc__increment"></buttton>
+              <div className="shoppingProduct__quantity">
+                <button typeof="button" onClick={() => addProduct({ sku })}>
+                  <FiPlusSquare />
+                </button>
                 <span>{data.quantity}</span>
-                <buttton className="shoppingProduc__decrement"></buttton>
+                <button
+                  typeof="button"
+                  onClick={() => {
+                    decrementProduct({ sku });
+                  }}
+                >
+                  <FiMinusSquare />
+                </button>
               </div>
             </div>
 

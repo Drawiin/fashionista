@@ -100,8 +100,29 @@
 
 .shoppingProduct__size {
   margin-top: 0.5rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #616161;
+}
+
+.shoppingProduct__quantity {
+  margin-top: 1rem;
+  display: flex;
+  align-content: center;
+}
+
+.shoppingProduct__quantity > button {
+  font-size: 1.4rem;
+  transition: opacity 0.5;
+}
+
+.shoppingProduct__quantity > button:hover {
+  cursor: pointer;
+  filter: opacity(0.5);
+}
+
+.shoppingProduct__quantity > span {
+  margin: 0 0.5rem;
+  font-size: 1.3rem;
 }
 
 .shoppingProduct__price {

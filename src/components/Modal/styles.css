@@ -9,7 +9,7 @@
   overflow-y: auto;
   padding-top: 40px;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 400px) {
   .modal {
     width: 400px;
   }
@@ -26,7 +26,7 @@
   width: 100%;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 400px) {
   .modal__header {
     width: 400px;
   }

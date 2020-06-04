@@ -39,7 +39,11 @@ function Topbar({ shoppingCart }) {
         </div>
       </div>
 
-      <Modal modal={cart} toggleModal={toggleCart} title="Sacola">
+      <Modal
+        modal={cart}
+        toggleModal={toggleCart}
+        title={`Sacola (${Object.entries(shoppingCart).length})`}
+      >
         <ShoppingCart />
       </Modal>
       <Modal modal={search} toggleModal={toggleSearch} title="Busca"></Modal>

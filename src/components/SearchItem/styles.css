@@ -1,0 +1,59 @@
+.searchItem {
+  position: relative;
+  width: 100%;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.searchItem__container {
+  display: flex;
+}
+
+.searchItem__discount {
+  background-color: #000000;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 5px;
+}
+
+.searchItem__img {
+  width: 90px;
+}
+
+.searchItem__img > img {
+  width: 100%;
+}
+
+.searchItem__info {
+  padding: 1px;
+  text-align: left;
+}
+
+.searchItem__name {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.searchItem__price {
+  padding: 5px 0;
+}
+
+.searchItem__price > span {
+  margin: 0 2px;
+}
+
+.searchItem__regularPrice {
+  font-weight: 300;
+  font-size: 12px;
+  color: #616161;
+  text-decoration: line-through;
+}
+
+.searchItem__actualPrice {
+  font-weight: 500;
+}

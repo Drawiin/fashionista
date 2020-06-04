@@ -6,7 +6,6 @@ import './styles.css';
 import placeholder from '../../assets/images/placeholder';
 
 export default function Product({ product }) {
-  //TO-DO recive only a product object
   function showDiscountPercentage() {
     return product.on_sale ? (
       <span className="product__discount">

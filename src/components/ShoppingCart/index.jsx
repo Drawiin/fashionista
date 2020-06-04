@@ -55,7 +55,7 @@ function ShoppingCart({
 
       <footer className="shoppingCart__footer">
         <span className="shoppingCart__total">
-          {'Total ' +
+          {'Subtotal ' +
             Intl.NumberFormat('pt-BR', {
               style: 'currency',
               currency: 'BRL',

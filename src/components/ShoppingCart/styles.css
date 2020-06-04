@@ -1,139 +1,9 @@
-.shoppingCart {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  right: 0;
-  top: 0;
-  z-index: 3;
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff;
-  box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.1);
-  animation: linear 300ms slide;
-  overflow-y: auto;
-}
-
-@keyframes slide {
-  from {
-    right: -500px;
-  }
-  to {
-    right: 0;
-  }
-}
-
-.hidden {
-  display: none;
-}
-
-@media screen and (min-width: 800px) {
-  .shoppingCart {
-    width: 400px;
-  }
-}
-
-.shoppingCart__header {
-  padding: 2rem 1rem;
-  display: flex;
-  align-items: center;
-}
-
-.shoppingCart__close {
-  padding: 1rem;
-}
-
-.shoppingCart__title {
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 1.2rem;
-}
-
 .shoppingList {
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
   margin-bottom: 4rem;
 }
-
-.shoppingProduct {
-  margin-top: 0.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
-}
-
-.shoppingProduct__container {
-  padding: 0.2rem;
-}
-
-.shoppingProduct__image {
-  width: 80px;
-}
-
-.shoppingProduct__image > img {
-  width: 100%;
-}
-
-.shoppingProduct__remove {
-  color: #f44336;
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0.2rem;
-  transition: opacity 0.5s;
-  font-size: 0.9rem;
-}
-
-.shoppingProduct__remove:hover {
-  cursor: pointer;
-  filter: opacity(0.5);
-}
-
-.shoppingProduct__remove > span {
-  margin-right: 0.2rem;
-}
-
-.shoppingProduct__name {
-  font-size: 0.9rem;
-}
-
-.shoppingProduct__size {
-  margin-top: 0.5rem;
-  font-size: 1rem;
-  color: #616161;
-}
-
-.shoppingProduct__quantity {
-  margin-top: 1rem;
-  display: flex;
-  align-content: center;
-}
-
-.shoppingProduct__quantity > button {
-  font-size: 1.4rem;
-  transition: opacity 0.5;
-}
-
-.shoppingProduct__quantity > button:hover {
-  cursor: pointer;
-  filter: opacity(0.5);
-}
-
-.shoppingProduct__quantity > span {
-  margin: 0 0.5rem;
-  font-size: 1.3rem;
-}
-
-.shoppingProduct__price {
-  font-size: 1.2rem;
-}
-
-.shoppingProduct__installments {
-  font-size: 0.9rem;
-  color: #616161;
-}
-
 .shoppingCart__footer {
   display: flex;
   justify-content: center;
@@ -145,25 +15,11 @@
   position: fixed;
   bottom: 0;
   width: 100%;
+  color: #fafafa;
 }
 
 @media screen and (min-width: 800px) {
   .shoppingCart__footer {
     width: 400px;
   }
-}
-
-.shoppingCart__total {
-  font-size: 1.2rem;
-  color: #ffffff;
-}
-
-.darknedBackground {
-  position: fixed;
-  left: 0;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  height: 100vh;
-  width: 100%;
-  z-index: 2;
 }

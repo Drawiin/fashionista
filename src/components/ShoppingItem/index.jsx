@@ -1,6 +1,8 @@
 import React from 'react';
 import { FiTrash2, FiPlusCircle, FiMinusCircle } from 'react-icons/fi';
 
+import placeholder from '../../assets/images/placeholder';
+
 import './styles.css';
 
 export default function ({
@@ -19,7 +21,7 @@ export default function ({
     <li className="shoppingItem">
       <div className="shoppingItem__container">
         <figure className="shoppingItem__img">
-          <img src={item.image} alt={item.name} />
+          <img src={item.image || placeholder} alt={item.name} />
         </figure>
         <div className="shoppingItem__info">
           <p className="shoppingItem__name">{item.name}</p>

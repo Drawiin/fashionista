@@ -20,6 +20,7 @@ function useSearch() {
   }, []);
 
   function search(search) {
+    search = search.trim();
     if (search.length > 0) {
       const result = products.filter(({ name }) =>
         name.toLowerCase().includes(search.toLowerCase())

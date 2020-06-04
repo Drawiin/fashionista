@@ -6,8 +6,9 @@ import { connect } from 'react-redux';
 import './styles.css';
 
 import Modal from '../Modal';
-import useModal from '../../hooks';
+import useModal from '../../hooks/modal';
 import ShoppingCart from '../ShoppingCart';
+import Search from '../Search';
 
 function mapStateToProps(state) {
   return { shoppingCart: state.shoppingCart };
@@ -46,7 +47,13 @@ function Topbar({ shoppingCart }) {
       >
         <ShoppingCart />
       </Modal>
-      <Modal modal={search} toggleModal={toggleSearch} title="Busca"></Modal>
+      <Modal
+        modal={search}
+        toggleModal={toggleSearch}
+        title="Busca de Produtos"
+      >
+        <Search />
+      </Modal>
     </>
   );
 }

@@ -5,7 +5,7 @@ import './styles.css';
 
 import placeholder from '../../assets/images/placeholder';
 
-export default function searchItem({ item }) {
+export default function searchItem({ item, toggleModal }) {
   function showDiscountPercentage() {
     return item.on_sale ? (
       <span className="searchItem__discount">
@@ -22,28 +22,32 @@ export default function searchItem({ item }) {
 
   return (
     <li className="searchItem">
-      <Link
-        className="searchItem__container"
-        to={{
-          pathname: `product/${item.name}`,
-          state: {
-            product: item,
-          },
-        }}
-      >
-        {showDiscountPercentage()}
-        <figure className="searchItem__img">
-          <img src={item.image || placeholder} alt="clothes" />
-        </figure>
-        <div className="searchItem__info">
-          <p className="searchItem__name">{item.name}</p>
+      <button onClick={toggleModal}>
+        <Link
+          className="searchItem__container"
+          to={{
+            pathname: `product/${item.name}`,
+            state: {
+              product: item,
+            },
+          }}
+        >
+          {showDiscountPercentage()}
+          <figure className="searchItem__img">
+            <img src={item.image || placeholder} alt="clothes" />
+          </figure>
+          <div className="searchItem__info">
+            <p className="searchItem__name">{item.name}</p>
 
-          <p className="searchItem__price">
-            {showRegularPrice()}
-            <span className="searchItem__actualPrice">{item.actual_price}</span>
-          </p>
-        </div>
-      </Link>
+            <p className="searchItem__price">
+              {showRegularPrice()}
+              <span className="searchItem__actualPrice">
+                {item.actual_price}
+              </span>
+            </p>
+          </div>
+        </Link>
+      </button>
     </li>
   );
 }

@@ -52,7 +52,7 @@ function Topbar({ shoppingCart }) {
         toggleModal={toggleSearch}
         title="Busca de Produtos"
       >
-        <Search />
+        <Search toggleModal={toggleSearch} />
       </Modal>
     </>
   );

@@ -6,7 +6,7 @@ import useTextInput from '../../hooks/input';
 
 import './styles.css';
 
-export default function Search() {
+export default function Search({ toggleModal }) {
   const [result, search] = useSearch();
   const [serchFild, setSearchField] = useTextInput(search);
 
@@ -29,7 +29,11 @@ export default function Search() {
       ></input>
       <ul className="search__itens">
         {result.map((item) => (
-          <SearchItem key={keyExtractor(item)} item={item} />
+          <SearchItem
+            key={keyExtractor(item)}
+            item={item}
+            toggleModal={toggleModal}
+          />
         ))}
       </ul>
     </div>

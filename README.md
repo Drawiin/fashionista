@@ -1,14 +1,11 @@
 <h1 align="center">
-    <img alt="Fashionista" title="#delicinha" src=".github/bethehero.svg" width="200px" />
+    <img alt="Fashionista" title="#delicinha" src=".github/fashionista.svg" width="200px" />
 </h1>
 
-<h1 align="center">
+<p align="center">
     <img alt="Deploy" title="#delicinha" src="https://api.netlify.com/api/v1/badges/955ab6dd-3394-4a75-bfdc-eecc6c517cdf/deploy-status"/>
-</h1>
+</p>
 
-<h1 align="center">
-    <img alt="Fashionista" title="#delicinha" src=".github/fashionista.png" width="800px" />
-</h1>
 <p align="center">
   <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -18,7 +15,7 @@
 <br>
 
 <p align="center">
-  <img alt="BeTheHero" src=".github/bethehero.png" width="100%">
+  <img alt="Fashionista" src=".github/fashionista.png" width="100%">
 </p>
 
 ## :rocket: Tecnologias

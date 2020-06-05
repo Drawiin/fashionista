@@ -7,7 +7,7 @@
 </h1>
 
 <h1 align="center">
-    <img alt="Fashionista" title="#delicinha" src=".github/bethehero.svg" width="200px" />
+    <img alt="Fashionista" title="#delicinha" src=".github/fashionista.png" width="800px" />
 </h1>
 <p align="center">
   <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -31,7 +31,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-A Fashionista é uma SPA, que visa ser dinâmica, rápida e mobile frindly, para aqueles que desejam uma experiencia de compra de roupas elegantes e um site elegante.
+A Fashionista é uma SPA, que visa ser dinâmica, rápida e mobile frindly, para aqueles que desejam uma experiencia de compra de roupas elegantes e um site elegante, e você pode ver em funcionamento [aqui](https://vinicius-fashionista.netlify.app/).
 
 ## :memo: Licença
 

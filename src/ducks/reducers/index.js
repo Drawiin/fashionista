@@ -4,8 +4,10 @@ import {
   DECREMENT_PRODUCT,
 } from '../constants/action-types';
 
+const localStrorage = window.localStorage;
+
 const initialState = {
-  shoppingCart: {},
+  shoppingCart: JSON.parse(localStrorage.getItem('shoppingCart')) || {},
 };
 
 function addProduct(state, payload) {
@@ -55,20 +57,22 @@ function decrementProduct(state, payload) {
 
 function rootReducer(state = initialState, action) {
   const { type, payload } = action;
+  let newState = { ...state };
 
   if (type === ADD_PRODUCT) {
-    return addProduct(state, payload);
+    newState = addProduct(state, payload);
   }
 
   if (type === REMOVE_PRODUCT) {
-    return removeProduct(state, payload);
+    newState = removeProduct(state, payload);
   }
 
   if (type === DECREMENT_PRODUCT) {
-    return decrementProduct(state, payload);
+    newState = decrementProduct(state, payload);
   }
 
-  return state;
+  localStrorage.setItem('shoppingCart', JSON.stringify(newState.shoppingCart));
+  return newState;
 }
 
 export default rootReducer;

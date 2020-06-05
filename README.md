@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Fashionista" title="#delicinha" src=".github/fashionista.svg" width="200px" />
+    <img alt="Fashionista" title="#delicinha" src=".github/fashionista.svg" width="300px" />
 </h1>
 
 <p align="center">

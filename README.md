@@ -1,12 +1,16 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/955ab6dd-3394-4a75-bfdc-eecc6c517cdf/deploy-status)](https://app.netlify.com/sites/vinicius-fashionista/deploys)
-
 <h1 align="center">
     <img alt="DevRadar" title="#delicinha" src=".github/bethehero.svg" width="200px" />
 </h1>
 
+<h1 align="center">
+    <img alt="Deploy" title="#delicinha" src="https://api.netlify.com/api/v1/badges/955ab6dd-3394-4a75-bfdc-eecc6c517cdf/deploy-status" width="200px" />
+</h1>
+
 <h4 align="center">
   Fashionista
-</h4>
+</h4><h1 align="center">
+    <img alt="DevRadar" title="#delicinha" src=".github/bethehero.svg" width="200px" />
+</h1>
 <p align="center">
   <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -25,7 +29,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [React](https://reactjs.org)
 - [Redux](https://redux.ord)
-- [React Router Dom][https://reactraining.com]
+- [React Router Dom](https://reactraining.com)
 
 ## 💻 Projeto
 

@@ -10,11 +10,6 @@ export default function Search() {
   const [result, search] = useSearch();
   const [serchFild, setSearchField] = useTextInput(search);
 
-  // function handleChange(event) {
-  //   setSearchField(event.target.value);
-  //   search(serchFild);
-  // }
-
   function keyExtractor(product) {
     const {
       sizes: [size],

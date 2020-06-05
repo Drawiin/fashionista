@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import useSearch from '../../hooks/search';
 import SearchItem from '../SearchItem';
+import useTextInput from '../../hooks/input';
 
 import './styles.css';
 
 export default function Search() {
-  const [serchFild, setSearchField] = useState('');
-  const [result, setResult] = useSearch();
+  const [result, search] = useSearch();
+  const [serchFild, setSearchField] = useTextInput(search);
 
-  function handleChange(event) {
-    setSearchField(event.target.value);
-    setResult(serchFild);
-  }
+  // function handleChange(event) {
+  //   setSearchField(event.target.value);
+  //   search(serchFild);
+  // }
 
   function keyExtractor(product) {
     const {
@@ -28,7 +29,7 @@ export default function Search() {
       <input
         className="search__input"
         value={serchFild}
-        onChange={handleChange}
+        onChange={setSearchField}
         placeholder="Digite o nome do produto"
       ></input>
       <ul className="search__itens">

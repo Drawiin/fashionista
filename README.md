@@ -3,7 +3,9 @@
 </h1>
 
 <p align="center">
+  <a href="https://app.netlify.com/sites/gedora/deploys">
     <img alt="Deploy" title="#delicinha" src="https://api.netlify.com/api/v1/badges/955ab6dd-3394-4a75-bfdc-eecc6c517cdf/deploy-status"/>
+   </a> 
 </p>
 
 <p align="center">
@@ -28,7 +30,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-A Gedora é uma SPA, que visa ser dinâmica, rápida e mobile frindly, para aqueles que desejam uma experiencia de compra fashion e uma loja fashion, e você pode ver em funcionamento [aqui](https://vinicius-fashionista.netlify.app/).
+A Gedora é uma SPA, que visa ser dinâmica, rápida e mobile frindly, para aqueles que desejam uma experiencia de compra fashion e uma loja fashion, e você pode ver em funcionamento [aqui](https://gedora.netlify.app/).
 
 ## :memo: Licença
 

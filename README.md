@@ -15,7 +15,7 @@
 <br>
 
 <p align="center">
-  <img alt="Gedora" src=".github/fashionista.png" width="100%">
+  <img alt="Gedora" src=".github/gedora.png" width="100%">
 </p>
 
 ## :rocket: Tecnologias

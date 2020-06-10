@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Fashionista" title="#delicinha" src=".github/fashionista.svg" width="300px" />
+    <img alt="Gedora" title="#delicinha" src=".github/gedora.svg" width="300px" />
 </h1>
 
 <p align="center">
@@ -15,7 +15,7 @@
 <br>
 
 <p align="center">
-  <img alt="Fashionista" src=".github/fashionista.png" width="100%">
+  <img alt="Gedora" src=".github/fashionista.png" width="100%">
 </p>
 
 ## :rocket: Tecnologias
@@ -28,7 +28,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-A Fashionista é uma SPA, que visa ser dinâmica, rápida e mobile frindly, para aqueles que desejam uma experiencia de compra de roupas elegantes e um site elegante, e você pode ver em funcionamento [aqui](https://vinicius-fashionista.netlify.app/).
+A Gedora é uma SPA, que visa ser dinâmica, rápida e mobile frindly, para aqueles que desejam uma experiencia de compra fashion e uma loja fashion, e você pode ver em funcionamento [aqui](https://vinicius-fashionista.netlify.app/).
 
 ## :memo: Licença
 

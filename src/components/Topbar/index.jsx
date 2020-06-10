@@ -22,7 +22,7 @@ function Topbar({ shoppingCart }) {
     <>
       <div className="topbar">
         <Link className="topbar__title" to="/">
-          <h1>Fashionista</h1>
+          <h1>Gedora</h1>
         </Link>
 
         <div>

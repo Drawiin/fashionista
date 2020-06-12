@@ -1,13 +1,20 @@
 import React from 'react';
+import { MemoryRouter } from 'react-router-dom';
 import { render, waitForElement } from '@testing-library/react';
+import data from './data/products.json';
 
-import Topbar from '../components/Topbar';
+import Product from '../components/Product';
 
-describe('Teste Topbar component', () => {
-  it('Sould render the Topbar component', async () => {
-    const { getByTestId } = render(<Topbar />);
-    const shoppingBagNode = await waitForElement(() =>
-      getByTestId('shopping-bag')
+const products = data;
+const [product] = products;
+
+describe('Product component', () => {
+  it('Should render', async () => {
+    const { getByTestId } = render(
+      <MemoryRouter>
+        <Product product={product} />
+      </MemoryRouter>
     );
+    const productNode = await waitForElement(() => getByTestId('product'));
   });
 });

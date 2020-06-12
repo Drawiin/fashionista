@@ -21,7 +21,7 @@ export default function Product({ product }) {
   }
 
   return (
-    <li className="product">
+    <li data-testid="product" className="product">
       <Link
         to={{
           pathname: `product/${product.name}`,
